@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<head>
+  <title>Inserting data into table in  vue</title>
+  <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+<form>
+
+  <p>
+    <label for="name">Name</label>
+    <input id="name" v-model="Name" type="text" name="name" placeholder="Enter name" >
+  </p>
+
+  <p>
+    <label for="age">Age</label>
+    <input id="age" v-model="Age" type="number" name="age" min="0"  max="55" placeholder="Enter age" >
+  </p>
+
+  <p>
+      <label for="email">Email</label>
+<input id="email" v-model="Email" type="email" name="email" placeholder="Please enter email">
+</p>
+  
+  <p>
+    <label for="movie">Favorite Movie</label>
+    <select id="movie" v-model="Movie" name="movie">
+      <option>Star Wars</option>
+      <option>Stranger Things</option>
+      <option>Vampire Dairies</option>
+      <option>Fast and Furious</option>
+    </select>
+  </p>
+
+</form>
+  <br/>
+
+<button v-on:click="addnew">+Add</button>
+  <h3 class="title">Person Records</h3>
+    <table class="pTable" border="yes">
+      <tr>
+        <th v-for="h in header">{{ h }}</th>
+      </tr>
+        <tr v-for="s in person">
+          <td>{{ s.Name }}</td>
+          <td>{{ s.Age }}</td>
+          <td>{{ s.Email }}</td>
+          <td>{{ s.Movie }}</td>
+        </tr>
+    </table><br/>
+      Appby: {{ Pname }}
+
+</div>
+</body>
+</html> 
+<script src="script.js"></script>
